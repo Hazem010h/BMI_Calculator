@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-
 class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
@@ -52,15 +50,15 @@ class _FirstScreenState extends State<FirstScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
+                        children: const [
+                          Icon(
                             FontAwesomeIcons.mars,
                             size: 80,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 15,
                           ),
-                          const Text('MALE'),
+                          Text('MALE'),
                         ],
                       ),
                     ),
@@ -81,15 +79,15 @@ class _FirstScreenState extends State<FirstScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Icon(
+                        children: const [
+                          Icon(
                             FontAwesomeIcons.venus,
                             size: 80,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 15,
                           ),
-                          const Text('FEMALE'),
+                          Text('FEMALE'),
                         ],
                       ),
                     ),
@@ -173,9 +171,9 @@ class _FirstScreenState extends State<FirstScreen> {
                                   });
                                 }
                               },
-                              child: const Icon(FontAwesomeIcons.minus),
                               backgroundColor: kActiveContainerColor,
                               foregroundColor: Colors.white,
+                              child: const Icon(FontAwesomeIcons.minus),
                             ),
                             FloatingActionButton.small(
                               onPressed: () {
@@ -183,9 +181,9 @@ class _FirstScreenState extends State<FirstScreen> {
                                   weight++;
                                 });
                               },
-                              child: const Icon(FontAwesomeIcons.plus),
                               backgroundColor: kActiveContainerColor,
                               foregroundColor: Colors.white,
+                              child: const Icon(FontAwesomeIcons.plus),
                             ),
                           ],
                         ),
@@ -220,9 +218,9 @@ class _FirstScreenState extends State<FirstScreen> {
                                   });
                                 }
                               },
-                              child: const Icon(FontAwesomeIcons.minus),
                               backgroundColor: kActiveContainerColor,
                               foregroundColor: Colors.white,
+                              child: const Icon(FontAwesomeIcons.minus),
                             ),
                             FloatingActionButton.small(
                               onPressed: () {
@@ -230,9 +228,9 @@ class _FirstScreenState extends State<FirstScreen> {
                                   age++;
                                 });
                               },
-                              child: const Icon(FontAwesomeIcons.plus),
                               backgroundColor: kActiveContainerColor,
                               foregroundColor: Colors.white,
+                              child: const Icon(FontAwesomeIcons.plus),
                             ),
                           ],
                         ),
@@ -246,27 +244,30 @@ class _FirstScreenState extends State<FirstScreen> {
           InkWell(
             onTap: () {
               try {
-                if(selectedGender==null){
+                if (selectedGender == null) {
                   throw 'error';
                 }
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>
-                        ResultScreen(
-                          calculator: Calculator(
-                            height: (height/100.0),
-                            weight: weight,
-                            gender: selectedGender,
-                            genderIcon: selectedGender == Gender.male ?
-                            const Icon(
-                              FontAwesomeIcons.mars,
-                              size: 80,
-                            ) : const Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80,
-                          ),
-                          )..calculate(),
-                        ),
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultScreen(
+                        calculator: Calculator(
+                          height: (height / 100.0),
+                          weight: weight,
+                          gender: selectedGender,
+                          genderIcon: selectedGender == Gender.male
+                              ? const Icon(
+                                  FontAwesomeIcons.mars,
+                                  size: 80,
+                                )
+                              : const Icon(
+                                  FontAwesomeIcons.venus,
+                                  size: 80,
+                                ),
+                        )..calculate(),
+                      ),
                     ));
-              }catch(e){
+              } catch (e) {
                 Fluttertoast.showToast(
                     msg: "Please select gender",
                     toastLength: Toast.LENGTH_SHORT,
@@ -274,8 +275,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     timeInSecForIosWeb: 1,
                     backgroundColor: Colors.black,
                     textColor: Colors.white,
-                    fontSize: 16.0
-                );
+                    fontSize: 16.0);
               }
             },
             child: Container(

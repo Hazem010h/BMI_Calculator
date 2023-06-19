@@ -4,7 +4,7 @@ import 'package:bmi_calc/Reusable_Components/ReUseableContainer.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-   ResultScreen({Key? key,required this.calculator}) : super(key: key);
+  ResultScreen({Key? key, required this.calculator}) : super(key: key);
 
   Calculator calculator;
 
@@ -12,7 +12,7 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('RESULTS'),
+        title: const Text('RESULTS'),
         centerTitle: true,
         backgroundColor: kScaffoldBg,
       ),
@@ -28,22 +28,22 @@ class ResultScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  this.calculator.genderIcon,
-                  SizedBox(
-                    height:5 ,
+                  calculator.genderIcon,
+                  const SizedBox(
+                    height: 5,
                   ),
                   Text(
-                    this.calculator.gender==Gender.male?'MALE':'FEMALE',
-                    style: TextStyle(
+                    calculator.gender == Gender.male ? 'MALE' : 'FEMALE',
+                    style: const TextStyle(
                       fontSize: 25,
                     ),
                   ),
-                  SizedBox(
-                    height:10 ,
+                  const SizedBox(
+                    height: 10,
                   ),
                   Text(
-                      this.calculator.bmi.toStringAsFixed(2),
-                    style: TextStyle(
+                    calculator.bmi.toStringAsFixed(2),
+                    style: const TextStyle(
                       fontSize: 25,
                     ),
                   ),
@@ -54,14 +54,14 @@ class ResultScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: TextButton(
-              child: Text('BACK'),
-              style:  TextButton.styleFrom(
+              style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
-                backgroundColor: kBottomNavColor,// Text Color
+                backgroundColor: kBottomNavColor, // Text Color
               ),
               onPressed: () {
                 Navigator.pop(context);
               },
+              child: const Text('BACK'),
             ),
           ),
         ],

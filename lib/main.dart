@@ -3,7 +3,7 @@ import 'package:bmi_calc/Screens/FirstScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,19 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FirstScreen(),
+      home: const FirstScreen(),
       theme: ThemeData(
         brightness: Brightness.dark,
-        sliderTheme: SliderThemeData(
-            activeTrackColor: kBottomNavColor,
-          thumbColor: kBottomNavColor
+        sliderTheme: const SliderThemeData(
+          activeTrackColor: kBottomNavColor,
+          thumbColor: kBottomNavColor,
         ),
         scaffoldBackgroundColor: kScaffoldBg,
-        appBarTheme: AppBarTheme(
-          backgroundColor:kScaffoldBg ,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: kScaffoldBg,
         ),
       ),
     );
   }
 }
-

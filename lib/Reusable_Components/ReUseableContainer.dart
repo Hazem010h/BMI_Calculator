@@ -2,10 +2,14 @@ import 'package:bmi_calc/Constants/Consts.dart';
 import 'package:flutter/material.dart';
 
 class ReUseableContainer extends StatelessWidget {
-   ReUseableContainer({required this.color,required this.child,});
+  ReUseableContainer({
+    super.key,
+    required this.color,
+    required this.child,
+  });
 
-   Color? color;
-   Widget? child;
+  Color? color;
+  Widget? child;
 
   @override
   Widget build(BuildContext context) {
